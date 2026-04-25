@@ -1,0 +1,31 @@
+apiVersion: v2
+name: vaultrix-umbrella
+description: A Helm chart for deploying the entire Vaultrix platform
+type: application
+version: 0.1.0
+appVersion: "1.0.0"
+dependencies:
+  - name: frontend
+    version: 0.1.0
+    repository: file://../chart/frontend
+  - name: api-gateway
+    version: 0.1.0
+    repository: file://../chart/api-gateway
+  - name: user-service
+    version: 0.1.0
+    repository: file://../chart/user-service
+  - name: order-service
+    version: 0.1.0
+    repository: file://../chart/order-service
+  - name: wallet-service
+    version: 0.1.0
+    repository: file://../chart/wallet-service
+  - name: invoice-service
+    version: 0.1.0
+    repository: file://../chart/invoice-service
+  - name: review-service
+    version: 0.1.0
+    repository: file://../chart/review-service
+  - name: notification-service
+    version: 0.1.0
+    repository: file://../chart/notification-service

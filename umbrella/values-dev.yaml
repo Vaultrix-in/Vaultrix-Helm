@@ -1,0 +1,25 @@
+
+frontend:
+  environment: dev
+  namespace: vaultrix-dev
+api-gateway:
+  environment: dev
+  namespace: vaultrix-dev
+user-service:
+  environment: dev
+  namespace: vaultrix-dev
+order-service:
+  environment: dev
+  namespace: vaultrix-dev
+wallet-service:
+  environment: dev
+  namespace: vaultrix-dev
+invoice-service:
+  environment: dev
+  namespace: vaultrix-dev
+review-service:
+  environment: dev
+  namespace: vaultrix-dev
+notification-service:
+  environment: dev
+  namespace: vaultrix-dev

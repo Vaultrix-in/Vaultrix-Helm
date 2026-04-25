@@ -1,0 +1,25 @@
+
+frontend:
+  environment: prod
+  namespace: vaultrix-prod
+api-gateway:
+  environment: prod
+  namespace: vaultrix-prod
+user-service:
+  environment: prod
+  namespace: vaultrix-prod
+order-service:
+  environment: prod
+  namespace: vaultrix-prod
+wallet-service:
+  environment: prod
+  namespace: vaultrix-prod
+invoice-service:
+  environment: prod
+  namespace: vaultrix-prod
+review-service:
+  environment: prod
+  namespace: vaultrix-prod
+notification-service:
+  environment: prod
+  namespace: vaultrix-prod
