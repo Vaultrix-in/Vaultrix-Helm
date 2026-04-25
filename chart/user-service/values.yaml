@@ -76,7 +76,7 @@ secret:
   create: true
   name: "user-service"
   stringData:
-    MONGO_URI: "# TODO: set MONGO_URI"
+    MONGO_URI: "mongodb://root:<password>@mongodb:27017/=admin" # TODO: replace <password>
     JWT_SECRET: "# TODO: set JWT_SECRET"
     INTERNAL_SERVICE_TOKEN: "# TODO: set INTERNAL_SERVICE_TOKEN"
 

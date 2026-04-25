@@ -77,7 +77,7 @@ secret:
   create: true
   name: "order-service"
   stringData:
-    MONGO_URI: "# TODO: set MONGO_URI"
+    MONGO_URI: "mongodb://root:<password>@mongodb:27017/=admin" # TODO: replace <password>
     INTERNAL_SERVICE_TOKEN: "# TODO: set INTERNAL_SERVICE_TOKEN"
 
 

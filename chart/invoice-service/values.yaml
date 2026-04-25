@@ -76,7 +76,7 @@ secret:
   create: true
   name: "invoice-service"
   stringData:
-    MONGO_URI: "# TODO: set MONGO_URI"
+    MONGO_URI: "mongodb://root:<password>@mongodb:27017/=admin" # TODO: replace <password>
 
 
 httpRoute:
