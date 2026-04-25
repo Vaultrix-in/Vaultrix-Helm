@@ -1,5 +1,0 @@
-namespace: "vaultrix-dev"
-environment: "dev"
-replicaCount: 1
-image:
-  tag: "latest"

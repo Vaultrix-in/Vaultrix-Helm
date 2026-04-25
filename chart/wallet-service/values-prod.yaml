@@ -1,5 +1,0 @@
-namespace: "vaultrix-prod"
-environment: "prod"
-replicaCount: 2
-image:
-  tag: "stable"

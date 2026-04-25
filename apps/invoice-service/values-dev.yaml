@@ -1,0 +1,6 @@
+environment: "dev"
+namespace: "vaultrix-dev"
+
+secret:
+  stringData:
+    MONGO_URI: "mongodb://root:<password>@mongodb.vaultrix-dev.svc.cluster.local:27017/invoice_db?authSource=admin" # TODO: replace <password>

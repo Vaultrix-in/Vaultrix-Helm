@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "wallet-service.fullname" . }}
+  labels:
+    app: {{ include "wallet-service.name" . }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ include "wallet-service.name" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "wallet-service.name" . }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.service.port }}
+              protocol: TCP
+          envFrom:
+            - configMapRef:
+                name: {{ include "wallet-service.fullname" . }}-config
+            - secretRef:
+                name: {{ include "wallet-service.fullname" . }}-secret
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}

@@ -1,0 +1,6 @@
+environment: "prod"
+namespace: "vaultrix-prod"
+
+secret:
+  stringData:
+    MONGO_URI: "mongodb://root:<password>@mongodb.vaultrix-prod.svc.cluster.local:27017/orders_db?authSource=admin" # TODO: replace <password>

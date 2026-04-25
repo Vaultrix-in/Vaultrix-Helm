@@ -1,0 +1,171 @@
+apiVersion: v1
+kind: List
+items:
+  - apiVersion: argoproj.io/v1alpha1
+    kind: Application
+    metadata:
+      name: frontend-prod
+      namespace: argocd
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/Vaultrix-in/Vaultrix-Helm.git
+        targetRevision: HEAD
+        path: apps/frontend
+        helm:
+          valueFiles:
+            - values-prod.yaml
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: vaultrix-prod
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+  - apiVersion: argoproj.io/v1alpha1
+    kind: Application
+    metadata:
+      name: api-gateway-prod
+      namespace: argocd
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/Vaultrix-in/Vaultrix-Helm.git
+        targetRevision: HEAD
+        path: apps/api-gateway
+        helm:
+          valueFiles:
+            - values-prod.yaml
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: vaultrix-prod
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+  - apiVersion: argoproj.io/v1alpha1
+    kind: Application
+    metadata:
+      name: user-service-prod
+      namespace: argocd
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/Vaultrix-in/Vaultrix-Helm.git
+        targetRevision: HEAD
+        path: apps/user-service
+        helm:
+          valueFiles:
+            - values-prod.yaml
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: vaultrix-prod
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+  - apiVersion: argoproj.io/v1alpha1
+    kind: Application
+    metadata:
+      name: order-service-prod
+      namespace: argocd
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/Vaultrix-in/Vaultrix-Helm.git
+        targetRevision: HEAD
+        path: apps/order-service
+        helm:
+          valueFiles:
+            - values-prod.yaml
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: vaultrix-prod
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+  - apiVersion: argoproj.io/v1alpha1
+    kind: Application
+    metadata:
+      name: wallet-service-prod
+      namespace: argocd
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/Vaultrix-in/Vaultrix-Helm.git
+        targetRevision: HEAD
+        path: apps/wallet-service
+        helm:
+          valueFiles:
+            - values-prod.yaml
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: vaultrix-prod
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+  - apiVersion: argoproj.io/v1alpha1
+    kind: Application
+    metadata:
+      name: invoice-service-prod
+      namespace: argocd
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/Vaultrix-in/Vaultrix-Helm.git
+        targetRevision: HEAD
+        path: apps/invoice-service
+        helm:
+          valueFiles:
+            - values-prod.yaml
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: vaultrix-prod
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+  - apiVersion: argoproj.io/v1alpha1
+    kind: Application
+    metadata:
+      name: review-service-prod
+      namespace: argocd
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/Vaultrix-in/Vaultrix-Helm.git
+        targetRevision: HEAD
+        path: apps/review-service
+        helm:
+          valueFiles:
+            - values-prod.yaml
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: vaultrix-prod
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+  - apiVersion: argoproj.io/v1alpha1
+    kind: Application
+    metadata:
+      name: notification-service-prod
+      namespace: argocd
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/Vaultrix-in/Vaultrix-Helm.git
+        targetRevision: HEAD
+        path: apps/notification-service
+        helm:
+          valueFiles:
+            - values-prod.yaml
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: vaultrix-prod
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
