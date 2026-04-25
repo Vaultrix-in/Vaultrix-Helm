@@ -1,0 +1,88 @@
+# Identity
+nameOverride: ""
+namespace: "vaultrix"
+appName: "wallet-service"
+component: "backend"
+partOf: "vaultrix"
+environment: "dev"
+
+replicaCount: 1
+
+image:
+  repository: "REGISTRY/vaultrix-wallet-service" # TODO: set your image registry
+  tag: "latest"
+  pullPolicy: IfNotPresent
+
+imagePullSecrets: []
+
+serviceAccount:
+  create: true
+  name: "wallet-service"
+  annotations: {}
+
+podAnnotations: {}
+podLabels: {}
+
+podSecurityContext: {}
+securityContext: {}
+
+service:
+  name: "wallet-service"
+  type: ClusterIP
+  port: 3003
+  targetPort: 3003
+  appProtocol: http
+
+container:
+  name: "wallet-service"
+  port: 3003
+
+resources:
+  requests:
+    cpu: "100m"
+    memory: "128Mi"
+  limits:
+    cpu: "500m"
+    memory: "512Mi"
+
+probes:
+  liveness:
+    enabled: true
+    path: /health
+    initialDelaySeconds: 15
+    periodSeconds: 10
+  readiness:
+    enabled: true
+    path: /health
+    initialDelaySeconds: 10
+    periodSeconds: 10
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 3
+  targetCPUUtilizationPercentage: 80
+
+config:
+  enabled: true
+  mapName: "wallet-service"
+  map:
+    PORT: "3003"
+    ORDER_SERVICE_URL: "http://order-service:3002"
+    INVOICE_SERVICE_URL: "http://invoice-service:3005"
+
+
+secret:
+  enabled: true
+  create: true
+  name: "wallet-service"
+  stringData:
+    MONGO_URI: "# TODO: set MONGO_URI"
+
+
+httpRoute:
+  enabled: false
+  name: "wallet-service-route"
+  parentRefs: []
+  hostnames: []
+  rules: []

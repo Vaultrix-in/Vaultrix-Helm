@@ -1,0 +1,5 @@
+namespace: "vaultrix-test"
+environment: "test"
+replicaCount: 1
+image:
+  tag: "latest"

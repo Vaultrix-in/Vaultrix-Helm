@@ -1,0 +1,13 @@
+{{- if .Values.config.enabled -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Values.config.mapName | default .Values.appName }}
+  namespace: {{ .Values.namespace }}
+  labels:
+    {{- include "order-service.labels" . | nindent 4 }}
+data:
+{{- range $key, $val := .Values.config.map }}
+  {{ $key }}: {{ $val | quote }}
+{{- end }}
+{{- end -}}
