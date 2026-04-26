@@ -3,7 +3,7 @@ replicaCount: 1
 image:
   repository: ghcr.io/vaultrix-in/order-service
   pullPolicy: IfNotPresent
-  tag: "latest"
+  tag: "0e2af"
 
 service:
   type: ClusterIP
