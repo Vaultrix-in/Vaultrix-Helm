@@ -3,4 +3,11 @@ kind: StorageClass
 metadata:
   name: vaultrix-storage
 provisioner: nfs.csi.k8s.io
-volumeBindingMode: WaitForFirstConsumer
+parameters:
+  server: 10.0.0.100 # TODO: REPLACEME with your NFS Server Private IP
+  share: /mnt/nfs/vaultrix # TODO: REPLACEME with your NFS Export Path
+reclaimPolicy: Retain
+volumeBindingMode: Immediate
+mountOptions:
+  - nfsvers=4.1
+  - hard
