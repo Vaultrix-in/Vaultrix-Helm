@@ -32,3 +32,7 @@ For internal support, please reach out to the DevOps team or open an issue in th
 
 ---
 © 2026 Vaultrix Platform. All rights reserved.
+
+
+## 🔐 Secret Management
+We use **Sealed Secrets** for secure GitOps. See [SECRETS.md](SECRETS.md) for usage instructions.
