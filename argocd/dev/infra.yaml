@@ -13,7 +13,7 @@ items:
       source:
         repoURL: https://github.com/Vaultrix-in/Vaultrix-Helm.git
         targetRevision: HEAD
-        path: infra/dev/sealed-secrets
+        path: infra/dev
       destination:
         server: https://kubernetes.default.svc
         namespace: sealed-secrets
