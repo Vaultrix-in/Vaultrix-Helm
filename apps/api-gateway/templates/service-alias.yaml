@@ -1,0 +1,25 @@
+# ------------------------------------------------------------------------------
+# SERVICE ALIAS: vaultrix-api-gateway
+# ------------------------------------------------------------------------------
+# WHY: Some legacy code or baked-in Nginx configurations (like in the Frontend)
+# expect the API Gateway to be reachable at 'vaultrix-api-gateway'.
+#
+# WHAT: This service acts as an alias. It uses the same selector as the 
+# primary 'api-gateway' service, effectively allowing both names to work.
+# ------------------------------------------------------------------------------
+apiVersion: v1
+kind: Service
+metadata:
+  name: vaultrix-api-gateway
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: api-gateway
+    type: alias
+spec:
+  ports:
+    - port: 3000
+      targetPort: 3000
+      protocol: TCP
+      name: http
+  selector:
+    app: {{ include "api-gateway.name" . }}

@@ -36,3 +36,7 @@ For internal support, please reach out to the DevOps team or open an issue in th
 
 ## 🔐 Secret Management
 We use **Sealed Secrets** for secure GitOps. See [SECRETS.md](SECRETS.md) for usage instructions.
+
+## 🛠️ Infrastructure Notes
+### API Gateway Alias
+We have added a Service Alias `vaultrix-api-gateway` in the `api-gateway` chart. This ensures that frontend components with hardcoded legacy URLs can still reach the gateway without requiring a code change.
