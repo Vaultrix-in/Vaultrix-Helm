@@ -19,5 +19,3 @@ resources:
 
 env: {}
 
-secret:
-  stringData: {}
