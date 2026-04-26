@@ -2,5 +2,5 @@ apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
   name: vaultrix-storage
-provisioner: kubernetes.io/no-provisioner # TODO: Change to your actual provisioner
+provisioner: nfs.csi.k8s.io
 volumeBindingMode: WaitForFirstConsumer

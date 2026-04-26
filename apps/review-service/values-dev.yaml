@@ -3,4 +3,4 @@ namespace: "vaultrix-dev"
 
 secret:
   stringData:
-    MONGO_URI: "mongodb://root:<password>@mongodb.vaultrix-dev.svc.cluster.local:27017/review_db?authSource=admin" # TODO: replace <password>
+    MONGO_URI: "mongodb://root:Vaultrix@123!@mongodb.vaultrix-dev.svc.cluster.local:27017/review_db?authSource=admin" # TODO: replace <password>

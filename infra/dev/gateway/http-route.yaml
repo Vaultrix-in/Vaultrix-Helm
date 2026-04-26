@@ -7,7 +7,7 @@ spec:
   parentRefs:
     - name: shared-gateway
   hostnames:
-    - vaultrix.dev.internal # TODO: set actual hostname
+    - dev.vaultric.in
   rules:
     - matches:
         - path:
