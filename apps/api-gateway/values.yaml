@@ -19,3 +19,6 @@ resources:
 
 env: {}
 
+
+imagePullSecrets:
+  - name: ghcr-login

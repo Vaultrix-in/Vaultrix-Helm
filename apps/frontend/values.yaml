@@ -21,3 +21,6 @@ env: {}
 
 secret:
   stringData: {}
+
+imagePullSecrets:
+  - name: ghcr-login
