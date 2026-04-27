@@ -1,13 +1,10 @@
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
-  name: vaultrix-storage
+  name: nfs-client
 provisioner: nfs.csi.k8s.io
 parameters:
-  server: 10.0.0.100 # TODO: REPLACEME with your NFS Server Private IP
-  share: /mnt/nfs/vaultrix # TODO: REPLACEME with your NFS Export Path
+  server: 172.31.4.92
+  share: /var/nfs/vaultrix
 reclaimPolicy: Retain
 volumeBindingMode: Immediate
-mountOptions:
-  - nfsvers=4.1
-  - hard
