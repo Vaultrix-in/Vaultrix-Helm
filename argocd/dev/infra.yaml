@@ -37,6 +37,8 @@ items:
         repoURL: https://github.com/Vaultrix-in/Vaultrix-Helm.git
         targetRevision: HEAD
         path: infra/dev
+        directory:
+          recurse: true
       destination:
         server: https://kubernetes.default.svc
         namespace: vaultrix-dev
