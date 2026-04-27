@@ -35,6 +35,9 @@ items:
         repoURL: https://github.com/Vaultrix-in/Vaultrix-Helm.git
         targetRevision: HEAD
         path: infra/prod
+        directory:
+          recurse: true
+          exclude: "{sealed-secrets,sealed-secrets/*,monitoring,monitoring/*,monitoring/**}"
       destination:
         server: https://kubernetes.default.svc
         namespace: vaultrix-prod
