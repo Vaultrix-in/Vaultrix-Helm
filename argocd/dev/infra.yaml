@@ -13,7 +13,7 @@ items:
       source:
         repoURL: https://github.com/Vaultrix-in/Vaultrix-Helm.git
         targetRevision: HEAD
-        path: infra/dev
+        path: infra/dev/sealed-secrets
         directory:
           recurse: true
       destination:
