@@ -39,6 +39,7 @@ items:
         path: infra/dev
         directory:
           recurse: true
+          exclude: "{sealed-secrets,sealed-secrets/*}"
       destination:
         server: https://kubernetes.default.svc
         namespace: vaultrix-dev
