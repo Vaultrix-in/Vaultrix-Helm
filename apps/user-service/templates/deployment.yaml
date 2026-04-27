@@ -11,6 +11,9 @@ spec:
       app: {{ include "user-service.name" . }}
   template:
     metadata:
+      annotations:
+        checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
+        checksum/secret: {{ include (print $.Template.BasePath "/sealed-secret.yaml") . | sha256sum }}
       labels:
         app: {{ include "user-service.name" . }}
     spec:
