@@ -17,7 +17,10 @@ resources:
     cpu: 10m
     memory: 64Mi
 
-env: {}
+env:
+  PORT: "3003"
+  ORDER_SERVICE_URL: "http://order-service:3002"
+  INVOICE_SERVICE_URL: "http://invoice-service:3004"
 
 
 imagePullSecrets:

@@ -1,2 +1,8 @@
 environment: "dev"
 namespace: "vaultrix-dev"
+env:
+  USER_SERVICE_URL: "http://user-service.vaultrix-dev.svc.cluster.local:3001"
+  ORDER_SERVICE_URL: "http://order-service.vaultrix-dev.svc.cluster.local:3002"
+  WALLET_SERVICE_URL: "http://wallet-service.vaultrix-dev.svc.cluster.local:3003"
+  INVOICE_SERVICE_URL: "http://invoice-service.vaultrix-dev.svc.cluster.local:3004"
+  REVIEW_SERVICE_URL: "http://review-service.vaultrix-dev.svc.cluster.local:3005"

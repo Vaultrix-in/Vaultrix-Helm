@@ -7,8 +7,15 @@ spec:
   parentRefs:
     - name: shared-gateway
   hostnames:
-    - vaultric.in
+    - vaultrix.in
   rules:
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /api
+      backendRefs:
+        - name: api-gateway
+          port: 3000
     - matches:
         - path:
             type: PathPrefix

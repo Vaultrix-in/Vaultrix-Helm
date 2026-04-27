@@ -17,7 +17,10 @@ resources:
     cpu: 10m
     memory: 64Mi
 
-env: {}
+env:
+  PORT: "3002"
+  USER_SERVICE_URL: "http://user-service:3001"
+  NOTIFICATION_SERVICE_URL: "http://notification-service:3006"
 
 
 imagePullSecrets:

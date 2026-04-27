@@ -17,7 +17,12 @@ resources:
     cpu: 10m
     memory: 64Mi
 
-env: {}
+env:
+  USER_SERVICE_URL: "http://user-service:3001"
+  ORDER_SERVICE_URL: "http://order-service:3002"
+  WALLET_SERVICE_URL: "http://wallet-service:3003"
+  INVOICE_SERVICE_URL: "http://invoice-service:3004"
+  REVIEW_SERVICE_URL: "http://review-service:3005"
 
 
 imagePullSecrets:

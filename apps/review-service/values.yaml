@@ -17,7 +17,9 @@ resources:
     cpu: 10m
     memory: 64Mi
 
-env: {}
+env:
+  PORT: "3005"
+  ORDER_SERVICE_URL: "http://order-service:3002"
 
 
 imagePullSecrets:

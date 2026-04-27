@@ -17,7 +17,9 @@ resources:
     cpu: 10m
     memory: 64Mi
 
-env: {}
+env:
+  PORT: "3001"
+  WALLET_SERVICE_URL: "http://wallet-service:3003"
 
 
 imagePullSecrets:
