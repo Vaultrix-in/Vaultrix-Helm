@@ -1,6 +1,7 @@
 environment: "dev"
 namespace: "vaultrix-dev"
-
 secret:
   stringData:
     MONGO_URI: "mongodb://root:Vaultrix@123!@mongodb.vaultrix-dev.svc.cluster.local:27017/users_db?authSource=admin" # TODO: replace <password>
+image:
+  tag: "9765669"
